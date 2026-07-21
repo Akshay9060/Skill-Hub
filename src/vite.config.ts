@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
+  base: '/Skill-Hub/', // <-- Add this line
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
