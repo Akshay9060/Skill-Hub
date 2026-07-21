@@ -6,15 +6,14 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
+import Skills from './pages/Skills';
+import Mentors from './pages/Mentors';
+import Profile from './pages/Profile';
 import ProtectedRoute from './components/ProtectedRoute';
 import './index.css';
 
-// Placeholder components - you'll need to create these files
-// For now, they will just show a simple message.
-const Skills = () => <div>Skills Page</div>;
-const Mentors = () => <div>Mentors Page</div>;
-const Profile = () => <div>Profile Page</div>;
-const Admin = () => <div>Admin Page</div>;
+// Admin placeholder – you can create a real admin page later
+const Admin = () => <div className="p-10 text-center text-2xl">Admin Dashboard</div>;
 
 function App() {
   return (
@@ -33,7 +32,6 @@ function App() {
               </ProtectedRoute>
             }
           />
-          {/* Uncommented and added the missing routes */}
           <Route
             path="/skills"
             element={
