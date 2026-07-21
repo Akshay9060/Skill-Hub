@@ -9,6 +9,13 @@ import Dashboard from './pages/Dashboard';
 import ProtectedRoute from './components/ProtectedRoute';
 import './index.css';
 
+// Placeholder components - you'll need to create these files
+// For now, they will just show a simple message.
+const Skills = () => <div>Skills Page</div>;
+const Mentors = () => <div>Mentors Page</div>;
+const Profile = () => <div>Profile Page</div>;
+const Admin = () => <div>Admin Page</div>;
+
 function App() {
   return (
     <BrowserRouter basename="/Skill-Hub">
@@ -26,11 +33,39 @@ function App() {
               </ProtectedRoute>
             }
           />
-          {/* Add other protected routes similarly */}
-          {/* <Route path="/skills" element={<ProtectedRoute><Skills /></ProtectedRoute>} /> */}
-          {/* <Route path="/mentors" element={<ProtectedRoute><Mentors /></ProtectedRoute>} /> */}
-          {/* <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} /> */}
-          {/* <Route path="/admin" element={<ProtectedRoute requireRole="admin"><Admin /></ProtectedRoute>} /> */}
+          {/* Uncommented and added the missing routes */}
+          <Route
+            path="/skills"
+            element={
+              <ProtectedRoute>
+                <Skills />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/mentors"
+            element={
+              <ProtectedRoute>
+                <Mentors />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute>
+                <Profile />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute requireRole="admin">
+                <Admin />
+              </ProtectedRoute>
+            }
+          />
           <Route path="/unauthorized" element={<div>Unauthorized</div>} />
         </Routes>
       </AuthProvider>
