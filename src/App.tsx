@@ -11,7 +11,7 @@ import './index.css';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/Skill-Hub">
       <AuthProvider>
         <Navbar />
         <Routes>
